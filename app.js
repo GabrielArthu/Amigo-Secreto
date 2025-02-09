@@ -13,7 +13,7 @@ function adicionarAmigo(){
     }else{
         console.log(amigo);
         amigos.push(amigo);
-        addfriend(amigo);
+        addfriend();
         clearSet();
     }
 
@@ -23,9 +23,15 @@ function clearSet(){
     document.querySelector("input").value = '';
 }
 
-function addfriend(amigo){
-    
-    amigosListados.innerHTML=amigos
+function addfriend(){
+    amigosListados = document.getElementById("listaAmigos");
+    //amigosListados.innerHTML=amigos
+    amigosListados.innerHTML="";
+    amigos.forEach(amigo => {
+        const itemLista = document.createElement("li");
+        itemLista.textContent = amigo;
+        amigosListados.appendChild(itemLista);
+      });
 }
 
 
@@ -41,7 +47,7 @@ function sortearAmigo(){
     listaAmigos.innerHTML=`O amigo sorteado é: ${amigos[randomNuber]}`;
     amigos.splice(randomNuber,1);
     console.log(amigos);
-    amigosListados.innerHTML=amigos
+    addfriend()
     showResetBtn.style.display = "flex";
     }
     
