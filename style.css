@@ -6,6 +6,8 @@
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    --color-button-reset: #8dfe2b;
+    --color-button-hover-reset: #74d91c;
 }
 
 /* Estilos gerais */
@@ -151,6 +153,8 @@ ul {
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
+    margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .button-draw img {
@@ -159,4 +163,19 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+/* Botão de resetar lista */
+#button-reset {
+    display: none;/**/
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-button-reset);
+    font-size: 16px;
+}
+
+#button-reset:hover {
+    background-color: var(--color-button-hover-reset);
 }
