@@ -1,4 +1,7 @@
 let amigos = [];
+let showResetBtn = document.querySelector('#button-reset')
+amigosListados = document.getElementById("listaAmigos");
+listaAmigos = document.getElementById("resultado");
 
 function adicionarAmigo(){
     let amigo = document.querySelector("input").value;
@@ -21,17 +24,35 @@ function clearSet(){
 }
 
 function addfriend(amigo){
-    listaAmigos = document.getElementById("listaAmigos");
-        listaAmigos.innerHTML=amigos
+    
+    amigosListados.innerHTML=amigos
 }
 
 
 function sortearAmigo(){
-    listnumber = amigos.length; 
-    randomNuber = Math.floor(Math.random() * listnumber);
 
-    listaAmigos = document.getElementById("resultado");
-        listaAmigos.innerHTML=`O amigo sorteado é: ${amigos[randomNuber]}`;
+    if(amigos.length == 0 ){
 
+        alert("Não existe nenhum amigo na lista");
+
+    }else{
+
+    randomNuber = Math.floor(Math.random() * amigos.length);
+    listaAmigos.innerHTML=`O amigo sorteado é: ${amigos[randomNuber]}`;
+    amigos.splice(randomNuber,1);
+    console.log(amigos);
+    amigosListados.innerHTML=amigos
+    showResetBtn.style.display = "flex";
+    }
+    
+}
+
+
+function reiniciar(){
+    amigos = [];
+    amigosListados.innerHTML="";
+    listaAmigos.innerHTML = "";
+    showResetBtn.style.display = "none";
+    clearSet();
     
 }
