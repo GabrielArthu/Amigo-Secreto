@@ -168,12 +168,7 @@ ul {
 /* Botão de resetar lista */
 #button-reset {
     display: none;/**/
-    align-items: center;
-    width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
     background-color: var(--color-button-reset);
-    font-size: 16px;
 }
 
 #button-reset:hover {
