@@ -37,18 +37,18 @@ function addfriend(){
 
 function sortearAmigo(){
 
-    if(amigos.length == 0 ){
+    if(amigos.length !== 0 ){
 
-        alert("Não existe nenhum amigo na lista");
+        randomNuber = Math.floor(Math.random() * amigos.length);
+        listaAmigos.innerHTML=`O amigo sorteado é: ${amigos[randomNuber]}`;
+        amigos.splice(randomNuber,1);
+        console.log(amigos);
+        addfriend()
+        showResetBtn.style.display = "flex";
 
     }else{
-
-    randomNuber = Math.floor(Math.random() * amigos.length);
-    listaAmigos.innerHTML=`O amigo sorteado é: ${amigos[randomNuber]}`;
-    amigos.splice(randomNuber,1);
-    console.log(amigos);
-    addfriend()
-    showResetBtn.style.display = "flex";
+        alert("Não existe nenhum amigo na lista");
+        reiniciar();
     }
     
 }
